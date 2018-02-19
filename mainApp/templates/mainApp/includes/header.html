@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+	  
+	  
+	  {% load staticfiles %}
+      <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"/>
+	  
+	  
+	  <link href="http://epicwin.com.ua/image/catalog/main/favicon.png" rel="icon" />
+      <!--Let browser know website is optimized for mobile-->
+	  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="description" content="" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	  <title>Main page</title>
+    </head>
+
+    <body>
+	
+<header>	
+	
+<div class="navbar-fixed">	
+<nav class="purple darken-3 z-depth-3">
+    <div class="container nav-wrapper">
+      <a href="/" class="brand-logo hoverable responsive-img white z-depth-1"><img src="{% static 'img/ew-logo.png' %}" height="70"/></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#!">О нас</a></li>
+        <li><a href="#!">Команда</a></li>
+        <li><a href="#!">Цены</a></li>
+        <li><a href="#!">Контакты</a></li>
+        <li><a href="/test">Test</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/admin">Admin</a></li>
+        <li><a class="btn-floating waves-effect waves-light blue modal-trigger" href="#modal1"><i class="material-icons right">account_circle</i></a></li>
+      </ul>
+
+    </div>
+</nav>
+</div>
+
+<ul class="side-nav" id="mobile-demo">
+        <li><a href="#!">О нас</a></li>
+        <li><a href="#!">Команда</a></li>
+        <li><a href="#!">Цены</a></li>
+        <li><a href="#!">Контакты</a></li>
+        <li><a href="/test">Test</a></li>
+        <li><a href="/news">News</a></li>
+        <li><a href="/admin">Admin</a></li>
+	<li><a class="btn red modal-trigger" href="#modal1">Login</a></li>
+</ul>	
+</header>
+
+
+
+
+<div id="modal1" class="modal">
+	<div class="modal-content">
+	
+	
+ <div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+		  <i class="material-icons prefix">account_circle</i>
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+		  <i class="material-icons prefix">account_circle</i>
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+		  <i class="material-icons prefix">lock</i>
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+		  <i class="material-icons prefix">mail</i>
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+	  
+	  
+<div class="row">	  
+{% load account %}
+
+{% user_display user as user_display %}
+
+{% load socialaccount %}
+
+
+{{ user_display }} has logged in...
+
+{% providers_media_js %}
+
+
+{{accounts.facebook}} -- a list of connected Twitter accounts
+{{accounts.facebook.0}} -- the first Twitter account
+
+
+{% get_providers as socialaccount_providers %}
+
+<a href="{% provider_login_url 'facebook' %}">facebook</a>
+<a href="{% provider_login_url 'vk' %}">vk</a>
+    </form>
+  </div>
+</div>
+	</div>
+	<div class="modal-footer">
+		<a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+	</div>
+</div>
+
+

@@ -1,0 +1,42 @@
+{% include "mainApp/includes/header.html" %}
+
+<main class="grey lighten-3">
+
+<div class="container">
+      <div class="row"></div>
+      <div class="row">
+{% block content %}
+  {% for post in object_list %}
+  
+        <div class="col s6 m6">
+          <div class="card medium">
+		  
+		      <div class="card-image waves-effect waves-block waves-light">
+			  <a href="/news/{{post.id}}">
+			  <img src="{{post.image_field.url}}" />
+              <span class="card-title">{{post.title}}</span>
+			  </a>
+            </div>
+            <div class="card-content">
+              <p>{{post.content|safe|escape|slice:":200"}}<a href="/news/{{post.id}}">  ...  читать далее</a></p>
+			  <p class="right">{{post.published_date|date:"d-m-Y"}}</p>
+			  
+            </div>
+            <div class="card-action">
+              <a href="/news/{{post.id}}">Подробнее</a>
+            </div>
+          </div>
+		  
+        </div>
+	
+  {% endfor %}
+{% endblock %}
+      </div>
+</div>
+
+
+</main>
+
+
+
+{% include "mainApp/includes/footer.html" %}

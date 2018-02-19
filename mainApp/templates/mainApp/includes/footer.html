@@ -1,0 +1,101 @@
+{% load staticfiles %}
+
+
+
+<footer class="page-footer blue darken-4 ">
+  <div class="container">
+	<div class="row">
+	  <div class="col l4 s4">
+		<h5 class="white-text">Контакты</h5>
+		<p class="grey-text text-lighten-4">
+Г. КИЕВ, УЛ. БОЛЬШАЯ ВАСИЛЬКОВСКАЯ 111/113 <br/>(ВХОД СО СТОРОНЫ ДВОРА)<br/>
+<br/>
+ТЕЛ.:  <br/>
+(093) 328-23-18  <br/>
+(099) 605-58-13 <br/>
+(067) 359-51-12<br/>
+<br/>
+ЭЛ. ПОЧТА:  <br/>
+МАГАЗИН: SHOP@EPICWIN.COM.UA <br/>
+КЛУБ: CLUB@EPICWIN.COM.UA</p>
+	  </div>
+	  <div class="col l4 s4">
+		<h5 class="white-text">Цены</h5>
+		<p class="grey-text text-lighten-4">Стоимость посещения: <br/>
+Будние дни - 80 грн. <br/>
+Выходные и праздничные дни - 100 грн. <br/>
+Ночные игротеки - 120 грн./вся ночь <br/>
+Стоимость абонемента на месяц - 480 грн. <br/>
+В стоимость входит чай, кофе и печеньки:) </p>
+	  </div>
+	  <div class="col l4 s4">
+		<h5 class="white-text">Время работы</h5>
+		<p class="grey-text text-lighten-4">ГРАФИК РАБОТЫ GEEK-SPACE (КЛУБА) EPICWIN:  <br/>
+ПН-ПТ 15:00-23:00 <br/>
+СБ-ВС 11:00-23:00</p>
+	  </div>
+
+
+
+	</div>
+
+
+
+	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="footer-copyright">
+
+
+	<div class="container">© 2018 Copyright EpicWin
+	<a class="grey-text text-lighten-4 right" href="http://epicwin.com.ua/">Our Shop</a>
+	</div>
+  </div>
+</footer>
+
+
+
+
+
+
+<audio loop autoplay>
+  <source src="{% static 'mp3/car.mp3' %}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+      <script>
+		$( document ).ready(function(){
+		$(".button-collapse").sideNav();
+		$(".modal").modal({
+			dismissible:false,
+			opacity:.9,
+			inDuration:400,
+			outDuration:400,
+			startingTop:'20%',
+			endingTop:'20%',
+		});
+		Materialize.fadeInImage('body');
+		Materialize.showStaggeredList('body');
+
+		})
+	  </script>
+
+    </body>
+  </html>

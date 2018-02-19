@@ -1,0 +1,31 @@
+{% include "mainApp/includes/header.html" %}
+
+
+<main class="pink accent-1">
+
+<div class="container">
+      <div class="row">
+	  
+{% block content %}
+ 
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><a href="./{{news.id}}">{{news.title}}</a></span>
+              <p>{{news.content|safe|escape}}</p>
+ 			  <p class="right">{{news.published_date|date:"d-m-Y"}}</p>
+			  <a href="./" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}
+      </div>
+</div>
+
+
+</main>
+
+
+
+{% include "mainApp/includes/footer.html" %}

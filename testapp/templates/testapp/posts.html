@@ -1,0 +1,64 @@
+{% include "mainApp/includes/header.html" %}
+
+
+<main class="pink accent-1">
+
+<div class="container">
+      <div class="row">
+{% block content %}
+  {% for test in object_list %}
+  
+        <div class="col s12 m12">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title"><a href="/test/{{test.id}}">{{test.content}}</a></span>
+              
+			  <p class="right">{{test.published_date|date:"d-m-Y"}}</p>
+			  
+<p><b>content:</b> {{test.content}}</p>
+<p><b>big_integer_field:</b> {{test.big_integer_field}}</p>
+<p><b>binary_field:</b> {{test.binary_field}}</p>
+<p><b>boolen_field:</b> {{test.boolen_field}}</p>
+<p><b>char_field:</b> {{test.char_field}}</p>
+<p><b>date_field:</b> {{test.date_field}}</p>
+<p><b>date_time_field:</b> {{test.date_time_field}}</p>
+<p><b>decimal_field:</b> {{test.decimal_field}}</p>
+<p><b>duration_field:</b> {{test.duration_field}}</p>
+<p><b>email_field:</b> {{test.email_field}}</p>
+<p><b>file_field:</b> {{test.file_field}}</p>
+<p><b>float_field:</b> {{test.float_field}}</p>
+<p><b>image_field:</b> {{test.image_field}}</p>
+<p><b>integer_field:</b> {{test.integer_field}}</p>
+<p><b>generic_IP_adress_field:</b> {{test.generic_IP_adress_field}}</p>
+<p><b>null_boolean_field:</b> {{test.null_boolean_field}}</p>
+<p><b>positive_integer_field:</b> {{test.positive_integer_field}}</p>
+<p><b>positive_small_integet_field:</b> {{test.positive_small_integet_field}}</p>
+<p><b>slug_field:</b> {{test.slug_field}}</p>
+<p><b>small_integer_field:</b> {{test.small_integer_field}}</p>
+<p><b>text_field:</b> {{test.text_field}}</p>
+<p><b>time_field:</b> {{test.time_field}}</p>
+<p><b>url_field:</b> {{test.url_field}}</p>
+<p><b>uuid_field:</b> {{test.uuid_field}}</p>	  
+			  
+			  
+<p>{{test.content|safe|escape|slice:":200"}}<a href="/test/{{test.id}}">  ...  читать далее</a></p>			  
+			  
+			  
+            </div>
+            <div class="card-action">
+              <a href="/test/{{test.id}}">Подробнее</a>
+            </div>
+          </div>
+        </div>
+	
+  {% endfor %}
+{% endblock %}
+      </div>
+</div>
+
+
+</main>
+
+
+
+{% include "mainApp/includes/footer.html" %}
